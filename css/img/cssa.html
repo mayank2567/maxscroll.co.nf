@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html ng-app="tl" ng-controller="ShellController">
+
+<!-- Mirrored from tomerlerner.com/web/scroll/css/img/cssa.png by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Apr 2016 19:23:15 GMT -->
+<head>
+
+
+    <base >
+    <!-- <base href="http://localhost:63342/2016/">-->
+
+    <meta charset="utf-8"/>
+    <title ng-bind="'Pixels by Tomer Lerner ' + $root.title">Pixels by Tomer Lerner</title>
+
+
+    <link rel="shortcut icon" href="http://tomerlerner.com/css/img/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="http://tomerlerner.com/css/img/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" type="image/png" href="../../../../css/img/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="../../../../css/img/favicon-16x16.png" sizes="16x16"/>
+
+    <meta property="og:title" content="Tomer Lerner"/>
+    <meta property="og:site_name" content="Pixels by Tomer Lerner"/>
+    <meta property="og:description" content="Tomer Lerner is an award winning designer and developer"/>
+    <meta property="og:image" content="../../../../css/img/share_tl.jpg"/>
+
+
+    <meta name="keywords" content="Tomer Lerner"/>
+    <meta name="description" content="Tomer Lerner"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="google-site-verification" content="MqykdWCA0P2kWivz8wl0GW2cKGnZ9Y0PvzBsP-Unr94"/>
+
+
+    <link rel="stylesheet" href="../../../../css/application.min.css"/>
+
+
+    <!-- Google fonts  -->
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic|Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700italic,700'
+          rel='stylesheet' type='text/css'>
+
+
+    <!-- Google Analyticst  -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../../../../www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-76523132-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+</head>
+<body ng-class="{touch: $root.touchDevice, ie: $root.ie, home: $root.pageClass === 'home'}">
+
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<div ng-cloak id="main_container" ng-view ng-class="{ready: mainReady}"></div>
+<div ng-cloak id="main_mask" ng-if="loadingPage" class="{{path}}_bg"></div>
+<svg pointer-events="none" ng-cloak id="main_loader" class="{{path}}_color" ng-show="loadingPage"
+     xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <path class="main_loader_1" d="M2,16.8V38H38V24.9H23V13M38,23V2H2V15.1H17V26.8" style="fill:none;stroke-miterlimit: 10;stroke-width: 4px"/>
+    <path class="main_loader_2" d="M23,13V24.9H38V38H2V16.8M17,26.8V15.1H2V2H38V23" style="fill:none;stroke-miterlimit: 10;stroke-width: 4px"/>
+</svg>
+
+
+<!-- logo -->
+<a id="logo" href="http://tomerlerner.com/">
+    <svg width="60px" height="30px">
+        <g class="color">
+            <path style="fill:none;stroke:lightblue;stroke-width:4;stroke-miterlimit:10;" d="M26.25,23.688V8.312H9 M33.75,6.312v15.375H51"/>
+        </g>
+        <g class="white">
+            <path style="fill:none;stroke:#fff;stroke-width:4;stroke-miterlimit:10;" d="M9,8.312h17.25v15.375 M51,21.688H33.75V6.312"/>
+        </g>
+    </svg>
+</a>
+
+
+<!-- menu -->
+<nav ng-cloak id="menu_btn" ng-show="!showCover" ng-click="$root.menuIn = !$root.menuIn"
+     ng-class="{active: $root.menuIn, fade: $root.caseHover, home: $root.pageClass === 'home' || $root.pageClass === 'contact'}">
+    <span></span>
+    <i class="t"></i>
+    <i class="m"></i>
+    <i class="b"></i>
+</nav>
+
+<nav id="menu" ng-show="$root.menuIn" ng-class="{in: $root.menuIn}" ng-controller="MenuController">
+
+    <div id="menu_canvas_wrapper">
+        <div id="menu_canvas" ng-click="$root.menuIn = false"></div>
+        <ul id="menu_share">
+            <li>
+                <a sharethis data-attr="twitter" href="#" target="_blank" class="icon-twitt"></a>
+            </li>
+            <li>
+                <a sharethis data-attr="facebook" href="#" target="_blank" class="icon-face"></a>
+            </li>
+            <!--<li>
+                <a href="#" class="icon-gplus"></a>
+            </li>-->
+            <li>
+                <a sharethis data-attr="pinterest" href="#" target="_blank" class="icon-pin"></a>
+            </li>
+            <!--<li>
+                <a href="#" class="icon-linked"></a>
+            </li>-->
+        </ul>
+    </div>
+
+    <div id="menu_list">
+        <a href="http://tomerlerner.com/work" ng-class="{active: $root.pageClass === 'work'}">
+            <span>Work</span>
+        </a>
+        <a href="http://tomerlerner.com/about" ng-class="{active: $root.pageClass === 'about'}">
+            <span>About</span>
+        </a>
+        <a href="http://tomerlerner.com/contact" ng-class="{active: $root.pageClass === 'contact'}">
+            <span>Contact</span>
+        </a>
+    </div>
+
+</nav>
+
+
+<!--  load mask -->
+<span class="load_mask one" ng-cloak ng-if="showCover && $root.pageClass === 'home'"></span>
+<span class="load_mask two" ng-cloak ng-if="showCover && $root.pageClass === 'home'"></span>
+<span class="load_mask three" ng-cloak ng-if="showCover && $root.pageClass === 'home'"></span>
+<span class="load_mask four" ng-cloak ng-if="showCover && $root.pageClass === 'home'"></span>
+<span class="load_mask five" ng-cloak ng-if="showCover && $root.pageClass === 'home'"></span>
+
+
+<!-- angular
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-touch.min.js"></script>
+<script src="js/wheel-indicator.min.js"></script>
+<script src="js/app.js"></script> -->
+
+<!-- angular Controllers
+<script src="js/fastclick.js"></script>
+<script src="js/ReqAnim.js"></script>
+<script src="js/ShellController.js"></script>
+<script src="js/MenuController.js"></script>
+<script src="js/HomeController.js"></script>
+<script src="js/WorkController.js"></script>
+<script src="js/AboutController.js"></script>
+<script src="js/ContactController.js"></script>
+<script src="js/CaseController.js"></script>-->
+<!--<script src="js/OopsController.js"></script>-->
+<!--<script src="js/three.js"></script>
+<script src="js/Projector.js"></script>
+<script src="js/CanvasRenderer.js"></script>-->
+
+
+<script src="../../../../js/min.min.js"></script>
+
+
+
+</body>
+
+<!-- Mirrored from tomerlerner.com/web/scroll/css/img/cssa.png by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Apr 2016 19:23:15 GMT -->
+</html>
